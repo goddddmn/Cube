@@ -1,3 +1,5 @@
+import java.awt.*;
+import java.awt.geom.Path2D;
 import java.util.Vector;
 
 public class Facet {
@@ -51,4 +53,13 @@ public class Facet {
         vertex[2].mulNum(n);
         vertex[3].mulNum(n);
     }
+    public void draw(Graphics g){
+        g.drawLine((int)vertex[0].x,(int)vertex[0].y,(int)vertex[1].x, (int)vertex[1].y);
+        g.drawLine((int)vertex[1].x,(int)vertex[1].y,(int)vertex[2].x, (int)vertex[2].y);
+        g.drawLine((int)vertex[2].x,(int)vertex[2].y,(int)vertex[3].x, (int)vertex[3].y);
+        g.drawLine((int)vertex[3].x,(int)vertex[3].y,(int)vertex[0].x, (int)vertex[0].y);
+
+
+    }
+   
 }

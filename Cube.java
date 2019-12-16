@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Cube {
     private Facet[] facets;
     public Cube(){
@@ -32,12 +34,32 @@ public class Cube {
                 new R3Vector(1,0,1),
                 new R3Vector(1,0,0));
     }
-    public void rotate (double rotateX,double rotateY,double rotateZ){
+    public void rotate (double dx,double dy,double dz){
         for(int i =1;i<6;i++){
-            facets[i].rotate(rotateX,rotateY,rotateZ);
+            facets[i].rotate(dx,dy,dz);
         }
     }
-    public void translate (double dx, double dy,double dz){}
+    public void translate (double dx,double dy,double dz){
+        for(int i =1;i<6;i++){
+            facets[i].rotate(dx,dy,dz);
+        }
+    }
+    public void mulNum (double d){
+        for(int i =1;i<6;i++){
+            facets[i].mulNum(d);
+        }}
+    public void draw(Graphics g){
+        for(int i =1;i<6;i++){
+            facets[i].draw(g);}
 
-}
+
+        facets[1].draw(g);
+        facets[2].draw(g);
+        facets[3].draw(g);
+        facets[4].draw(g);
+        facets[5].draw(g);
+
+        }
+
+    }
 
